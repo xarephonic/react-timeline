@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TimelineItem from './timeline-item.js';
+import Bootstrap from 'react-bootstrap';
 
 class TimelineItemHolder extends Component {
 	constructor(props) {
@@ -30,13 +31,13 @@ class TimelineItemHolder extends Component {
 	}
 
 	componentDidMount() {
-		setInterval(this.getNewUsers, 5000);
+		//setInterval(this.getNewUsers, 5000);
 		
 	}
 
 	render() {
 		return (
-			<div className="timeline-item-holder">
+			<div bsClass="container" className="timeline-item-holder">
 				<ul>
 					{
 						this.state.users.map((v, i) => {
