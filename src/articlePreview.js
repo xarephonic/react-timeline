@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 class ArticlePreview extends Component {
   constructor(props) {
     super(props);
+    this.title = props.title;
+    this.text = props.text;
   }
 
   render() {
@@ -11,9 +13,9 @@ class ArticlePreview extends Component {
 
     return (
     	<div>
-    		<h3>Article Title</h3>
+    		<h3>{this.title}</h3>
       		<div>
-      			<p>Article Preview Text</p>
+      			<p>{this.text}</p>
       		</div>
       	</div>
     );

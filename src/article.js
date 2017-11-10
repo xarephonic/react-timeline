@@ -4,10 +4,10 @@ class Article extends Component {
 
 	render() {
 		return (
-			
+			<div>THIS IS A SINGLE ARTICLE</div>
 		);
 	}
 }
 
-export default TimelineItem;
+export default Article;
 
