@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 class ArticlePreview extends Component {
@@ -6,18 +7,21 @@ class ArticlePreview extends Component {
     super(props);
     this.title = props.title;
     this.text = props.text;
+    this.id = props.id
   }
 
   render() {
     
 
     return (
-    	<div>
-    		<h3>{this.title}</h3>
+      <Link to={'/article/'+this.id}>
+        <div>
+    		  <h3>{this.title}</h3>
       		<div>
       			<p>{this.text}</p>
       		</div>
       	</div>
+      </Link>
     );
   }
 }

@@ -29,8 +29,8 @@ class ArticlePreviewHolder extends Component {
     return (
       <div>
         {
-          this.state.previews.map((prev, i) => {
-            return (<ArticlePreview key={i} {...prev} />)
+          this.state.previews.map((prev) => {
+            return (<ArticlePreview key={prev.id} {...prev} />)
           })
         }
       </div>

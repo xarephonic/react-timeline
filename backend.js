@@ -12,6 +12,7 @@ app.use(function(req, res, next) {
 
 app.get('/article/:id', (req, res) => {
 	let data = {
+		id: req.params.id,
 		text: articleText,
         title: "Article Title"
 	}
@@ -22,18 +23,22 @@ app.get('/getArticlePreviews', (req, res) => {
 	let data = {
 		articles: [
 			{
+				id: 0,
 				text: articlePreviewText,
 				title: "Article Title"
 			},
 			{
+				id: 1,
 				text: articlePreviewText,
 				title: "Article Title"
 			},
 			{
+				id: 2,
 				text: articlePreviewText,
 				title: "Article Title"
 			},
 			{
+				id: 3,
 				text: articlePreviewText,
 				title: "Article Title"
 			}
