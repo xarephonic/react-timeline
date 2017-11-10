@@ -28,6 +28,10 @@ class ArticleSoloHolder extends Component {
 		request.send();
 	}
 
+	componentWillUnmount() {
+		console.log('solo holder unmount');
+	}
+
 	render() {
 		return (
 			<div>

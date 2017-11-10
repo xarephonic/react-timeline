@@ -14,14 +14,12 @@ class ArticlePreview extends Component {
     
 
     return (
-      <Link to={'/article/'+this.id}>
         <div>
     		  <h3>{this.title}</h3>
       		<div>
-      			<p>{this.text}</p>
+      			<p>{this.text} <Link to={'/article/'+this.id}>Read more</Link></p>
       		</div>
       	</div>
-      </Link>
     );
   }
 }

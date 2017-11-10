@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  Switch as Switch,
   Route,
   Link
 } from 'react-router-dom'
@@ -18,24 +18,28 @@ class Home extends Component {
     super(props);
   }
 
+  componentWillMount() {
+  	console.log('home mount');
+  }
+
   render() {
     return (
 	    <div className="App">
 	      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
-	      <header className="App-header">
-	        <img src={logo} className="App-logo" alt="logo" />
+	      <header className="App-header text-center">
+	      	<Link to='/'>
+	        	<img src={logo} className="App-logo" alt="logo" />
+	        </Link>
 	        <h1 className="App-title">Welcome to React</h1>
 	      </header>
 	      <Grid fluid>
 	        <Row className="show-grid">
 	          <Col mdOffset={2} md={2}>LEFT PANEL</Col>
 	          <Col xs={12} md={4}>
-	          	<Router>
-	          		<div>
-	          			<Route exact path="/" component={ArticlePreviewHolder} />
-	          			<Route path="/article/:id" component={ArticleSoloHolder} />
-	          		</div>
-	          	</Router>
+	          	<Switch>
+	      			<Route exact path="/" component={ArticlePreviewHolder} />
+	      			<Route exact path="/article/:id" component={ArticleSoloHolder} />
+	          	</Switch>
 	          </Col>
 	          <Col xs={6} md={2}>RIGHT PANEL</Col>
 	        </Row>

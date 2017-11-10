@@ -25,6 +25,10 @@ class ArticlePreviewHolder extends Component {
     request.send();
   }
 
+  componentWillUnmount() {
+    console.log('previews holder unmount');
+  }
+
   render() {
     return (
       <div>
