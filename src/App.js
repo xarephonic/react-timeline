@@ -4,14 +4,10 @@ import Home from './Home.js';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
 
-
+//this is the Home page. Home component will stay mounted. We will change the components inside Home
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

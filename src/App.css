@@ -7,3 +7,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.category-panel {
+	width: 60%;
+	margin: 10px auto 10px auto;
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	font-size: 1.2em;
+	border-bottom: solid;
+}

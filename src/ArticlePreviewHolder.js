@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import ArticlePreview from './ArticlePreview.js';
+import axios from 'axios';
 
 
 class ArticlePreviewHolder extends Component {
   constructor(props) {
     super(props);
-    this.state = {previews: []};
-    this.updatePreviews = this.updatePreviews.bind(this);
-  }
-
-  updatePreviews(newPrevs) {
-    this.setState({
-        previews: newPrevs
-    });
+    this.state = {};
   }
 
   componentWillMount() {
-    let request = new XMLHttpRequest();
-    request.onload = () => {
-      let previewsArr = JSON.parse(request.response).articles;
-      this.updatePreviews(previewsArr);
-    }
-    request.open('GET','http://localhost:3001/getArticlePreviews');
-    request.send();
+    axios.get('http://localhost:3001/getArticlePreviews')
+      .then((response) => {
+        this.setState({
+          previews: response.data.articles
+        });
+      });
   }
 
   componentWillUnmount() {
@@ -33,7 +26,7 @@ class ArticlePreviewHolder extends Component {
     return (
       <div>
         {
-          this.state.previews.map((prev) => {
+          this.state.previews && this.state.previews.map((prev) => {
             return (<ArticlePreview key={prev.id} {...prev} />)
           })
         }

@@ -10,6 +10,12 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/getCategories', (req,res) => {
+	let categories = ["World", "Politics", "Business", "Tech", "Science", "Food", "Style", "Arts", "Sports"];
+
+	res.send(categories);
+});
+
 app.get('/article/:id', (req, res) => {
 	let data = {
 		id: req.params.id,
