@@ -17,7 +17,6 @@ import Categories from './Categories.js';
 class Home extends Component {
 
   componentWillMount() {
-  	console.log('home mount');
   }
 
   render() {
