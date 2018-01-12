@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Categories extends Component {
 	constructor(props) {
@@ -13,7 +14,7 @@ class Categories extends Component {
 	    		this.setState({
 	    			categoriesList: response.data
 	    		});
-	    	});
+			});
   	}
 
 	render() {
@@ -21,9 +22,10 @@ class Categories extends Component {
 			<div className="category-panel">
     		  {
     		  	this.state.categoriesList && this.state.categoriesList.map((v) => {
-    		  		return (<div key={v}>{v}</div>)
+    		  		return (<div key={v}><Link to={'/Cat/'+v}>{v}</Link></div>)
     		  	})
-    		  }
+			  }
+			  
       		</div>
 		);
 	}
