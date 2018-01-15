@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "concurrently": "^3.5.0",
     "express": "^4.16.2",
+    "firebase": "^4.8.2",
     "history": "^4.7.2",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
