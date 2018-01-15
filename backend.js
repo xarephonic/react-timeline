@@ -25,12 +25,15 @@ app.get('/article/:id', (req, res) => {
 	res.send(data);
 });
 
-app.get('/getArticlePreviews', (req, res) => {
+app.get('/getArticlePreviews/:category?', (req, res) => {
+
+	let category = req.params.category;
+
 	let data = {
 		articles: [
 			{
 				id: 0,
-				text: articlePreviewText,
+				text: category? category+" "+articlePreviewText : articlePreviewText,
 				title: "Article Title"
 			},
 			{
