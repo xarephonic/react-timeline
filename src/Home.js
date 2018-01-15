@@ -13,7 +13,6 @@ import Col from 'react-bootstrap/lib/Col';
 import ArticlePreviewHolder from './ArticlePreviewHolder.js';
 import ArticleSoloHolder from './ArticleSoloHolder.js';
 import Categories from './Categories.js';
-import CatSoloHolder from './CatSoloHolder.js';
 
 class Home extends Component {
 
@@ -39,7 +38,7 @@ class Home extends Component {
 	          		//Add Routes here to display at midsection
 	      			<Route exact path="/" component={ArticlePreviewHolder} />
 	      			<Route exact path="/article/:id" component={ArticleSoloHolder} />
-							<Route exact path="/Cat/:catId" component={CatSoloHolder} />
+							<Route exact path="/Cat/:catId" component={ArticlePreviewHolder} />
 	          	</Switch>
 	          </Col>
 	          <Col xs={6} md={2}>RIGHT PANEL</Col>
